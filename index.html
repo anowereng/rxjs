@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>this is a title</title>
+        <script src="/node_modules/rxjs/bundles/rxjs.umd.js"></script>
+        <script>
+                 let sub = new rxjs.Subject(); 
+                let text="anower";
+                function getTextData(){
+                    return text;
+                }
+                function Update(){
+                    //  return "Corona World !!"
+                    sub.next("Corona World !!")
+                }
+                window.onload =  function(){
+                    sub.subscribe(x=>{
+                        document.getElementById('myTextId').value = x ;
+                    })
+                   
+                }
+        </script>
+    </head>
+    <body>
+        <h2>anower yoyu are good </h2>
+        <input type="text" id="myTextId" value="">
+        <input type="button" value="UpdateMe" onclick="Update()">
+    </body>
+</html>
